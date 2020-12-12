@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<debugInfo>
+    <manifest filename="F:\Projects\GeocacheFinder\manifest.xml"/>
+    <pcToLineNum>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderMenuDelegate.mc" id="3" lineNum="6" pc="268435456" symbol="initialize"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderMenuDelegate.mc" id="3" lineNum="7" pc="268435460" symbol="initialize"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderMenuDelegate.mc" id="4" lineNum="10" pc="268435479" symbol="onMenuItem"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderMenuDelegate.mc" id="4" lineNum="11" pc="268435483" symbol="onMenuItem"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderMenuDelegate.mc" id="4" lineNum="12" pc="268435494" symbol="onMenuItem"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderMenuDelegate.mc" id="4" lineNum="13" pc="268435518" symbol="onMenuItem"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderMenuDelegate.mc" id="4" lineNum="14" pc="268435529" symbol="onMenuItem"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderView.mc" id="6" lineNum="14" pc="268435554" symbol="initialize"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderView.mc" id="6" lineNum="15" pc="268435558" symbol="initialize"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderView.mc" id="6" lineNum="16" pc="268435576" symbol="initialize"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderView.mc" id="6" lineNum="17" pc="268435607" symbol="initialize"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderView.mc" id="7" lineNum="21" pc="268435651" symbol="onLayout"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderView.mc" id="7" lineNum="22" pc="268435655" symbol="onLayout"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderView.mc" id="7" lineNum="23" pc="268435692" symbol="onLayout"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderView.mc" id="8" lineNum="29" pc="268435723" symbol="onShow"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderView.mc" id="9" lineNum="33" pc="268435728" symbol="onUpdate"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderView.mc" id="9" lineNum="35" pc="268435732" symbol="onUpdate"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderView.mc" id="9" lineNum="37" pc="268435752" symbol="onUpdate"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderView.mc" id="9" lineNum="38" pc="268435777" symbol="onUpdate"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderView.mc" id="9" lineNum="39" pc="268435803" symbol="onUpdate"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderView.mc" id="9" lineNum="41" pc="268435832" symbol="onUpdate"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderView.mc" id="10" lineNum="48" pc="268435873" symbol="onHide"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderTracker.mc" id="13" lineNum="40" pc="268435878" symbol="initialize"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderTracker.mc" id="13" lineNum="41" pc="268435882" symbol="initialize"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderTracker.mc" id="13" lineNum="43" pc="268435891" symbol="initialize"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderTracker.mc" id="14" lineNum="46" pc="268435908" symbol="start"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderTracker.mc" id="14" lineNum="47" pc="268435912" symbol="start"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderTracker.mc" id="15" lineNum="50" pc="268435957" symbol="stop"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderTracker.mc" id="15" lineNum="51" pc="268435961" symbol="stop"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderTracker.mc" id="16" lineNum="56" pc="268436006" symbol="onPosition"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderTracker.mc" id="16" lineNum="57" pc="268436010" symbol="onPosition"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderTracker.mc" id="16" lineNum="58" pc="268436026" symbol="onPosition"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderTracker.mc" id="17" lineNum="61" pc="268436043" symbol="hasPosition"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderTracker.mc" id="17" lineNum="62" pc="268436047" symbol="hasPosition"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderTracker.mc" id="17" lineNum="63" pc="268436060" symbol="hasPosition"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderTracker.mc" id="17" lineNum="65" pc="268436066" symbol="hasPosition"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderTracker.mc" id="18" lineNum="69" pc="268436070" symbol="getPosition"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderTracker.mc" id="18" lineNum="70" pc="268436074" symbol="getPosition"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderTracker.mc" id="18" lineNum="71" pc="268436087" symbol="getPosition"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderTracker.mc" id="18" lineNum="72" pc="268436101" symbol="getPosition"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderTracker.mc" id="18" lineNum="73" pc="268436128" symbol="getPosition"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderTracker.mc" id="18" lineNum="74" pc="268436142" symbol="getPosition"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderTracker.mc" id="19" lineNum="80" pc="268436173" symbol="hav"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderTracker.mc" id="19" lineNum="81" pc="268436177" symbol="hav"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderTracker.mc" id="20" lineNum="88" pc="268436226" symbol="haversineFormula"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderTracker.mc" id="20" lineNum="91" pc="268436230" symbol="haversineFormula"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderTracker.mc" id="20" lineNum="95" pc="268436391" symbol="haversineFormula"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderTracker.mc" id="20" lineNum="98" pc="268436440" symbol="haversineFormula"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderTracker.mc" id="21" lineNum="101" pc="268436444" symbol="getDistance"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderTracker.mc" id="21" lineNum="102" pc="268436448" symbol="getDistance"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderTracker.mc" id="21" lineNum="103" pc="268436462" symbol="getDistance"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderTracker.mc" id="21" lineNum="105" pc="268436493" symbol="getDistance"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderTracker.mc" id="21" lineNum="25" pc="268437455" symbol="&lt;init&gt;"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderTracker.mc" id="21" lineNum="32" pc="268437542" symbol="&lt;init&gt;"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderApp.mc" id="23" lineNum="8" pc="268436500" symbol="initialize"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderApp.mc" id="23" lineNum="9" pc="268436504" symbol="initialize"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderApp.mc" id="23" lineNum="11" pc="268436522" symbol="initialize"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderApp.mc" id="24" lineNum="16" pc="268436553" symbol="onStart"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderApp.mc" id="24" lineNum="17" pc="268436557" symbol="onStart"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderApp.mc" id="25" lineNum="21" pc="268436576" symbol="onStop"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderApp.mc" id="25" lineNum="22" pc="268436580" symbol="onStop"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderApp.mc" id="26" lineNum="26" pc="268436599" symbol="getInitialView"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderApp.mc" id="26" lineNum="27" pc="268436603" symbol="getInitialView"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderDelegate.mc" id="28" lineNum="5" pc="268436671" symbol="initialize"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderDelegate.mc" id="28" lineNum="6" pc="268436675" symbol="initialize"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderDelegate.mc" id="29" lineNum="9" pc="268436694" symbol="onMenu"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderDelegate.mc" id="29" lineNum="10" pc="268436698" symbol="onMenu"/>
+        <entry filename="F:\\Projects\\GeocacheFinder\\source\\GeocacheFinderDelegate.mc" id="29" lineNum="11" pc="268436782" symbol="onMenu"/>
+        <entry filename="Rez" id="33" lineNum="12" pc="268436786" symbol="initialize"/>
+        <entry filename="Rez" id="33" lineNum="13" pc="268436790" symbol="initialize"/>
+        <entry filename="Rez" id="34" lineNum="16" pc="268436815" symbol="draw"/>
+        <entry filename="Rez" id="34" lineNum="19" pc="268436819" symbol="draw"/>
+        <entry filename="Rez" id="34" lineNum="20" pc="268436855" symbol="draw"/>
+        <entry filename="Rez" id="38" lineNum="37" pc="268436936" symbol="MainLayout"/>
+        <entry filename="Rez" id="38" lineNum="40" pc="268436948" symbol="MainLayout"/>
+        <entry filename="Rez" id="38" lineNum="41" pc="268436988" symbol="MainLayout"/>
+        <entry filename="Rez" id="38" lineNum="42" pc="268437001" symbol="MainLayout"/>
+        <entry filename="Rez" id="38" lineNum="44" pc="268437017" symbol="MainLayout"/>
+        <entry filename="Rez" id="38" lineNum="46" pc="268437185" symbol="MainLayout"/>
+        <entry filename="Rez" id="41" lineNum="59" pc="268437213" symbol="initialize"/>
+        <entry filename="Rez" id="41" lineNum="60" pc="268437217" symbol="initialize"/>
+        <entry filename="Rez" id="41" lineNum="61" pc="268437235" symbol="initialize"/>
+        <entry filename="Rez" id="41" lineNum="62" pc="268437291" symbol="initialize"/>
+    </pcToLineNum>
+    <symbolTable>
+        <entry id="8388639" module="true" symbol="Graphics"/>
+        <entry id="8389346" symbol="text"/>
+        <entry field="true" id="18" symbol="destinationLat"/>
+        <entry id="8388632" method="true" symbol="&lt;init&gt;"/>
+        <entry id="5" module="true" symbol="globals/Rez/Menus"/>
+        <entry id="39" method="true" symbol="MainLayout"/>
+        <entry field="true" id="16" symbol="LOCATION_RADIANS"/>
+        <entry field="true" id="8390407" symbol="mLabel"/>
+        <entry id="22" method="true" symbol="onPosition"/>
+        <entry field="true" id="8388611" module="true" symbol="Toybox"/>
+        <entry id="29" method="true" symbol="hav"/>
+        <entry id="14" object="true" symbol="GeocacheFinderDelegate"/>
+        <entry field="true" id="45" symbol="AppName"/>
+        <entry id="9" module="true" symbol="globals/Rez/Strings"/>
+        <entry id="8389080" method="true" symbol="onMenu"/>
+        <entry id="8388772" module="true" object="true" symbol="Fonts"/>
+        <entry field="true" id="43" symbol="top_text"/>
+        <entry field="true" id="40" symbol="bottom_text"/>
+        <entry field="true" id="35" symbol="rooAww"/>
+        <entry field="true" id="8388947" method="true" symbol="value"/>
+        <entry id="8388648" module="true" symbol="WatchUi"/>
+        <entry id="3" module="true" symbol="globals/Rez"/>
+        <entry field="true" id="44" symbol="prompt"/>
+        <entry id="23" method="true" symbol="hasPosition"/>
+        <entry id="8389124" method="true" symbol="onUpdate"/>
+        <entry field="true" id="8389065" symbol="locY"/>
+        <entry field="true" id="8389064" symbol="locX"/>
+        <entry id="8388764" method="true" symbol="format"/>
+        <entry id="8388771" module="true" object="true" symbol="Drawables"/>
+        <entry id="8389314" symbol="latitude"/>
+        <entry id="8389348" symbol="font"/>
+        <entry id="2" module="true" symbol="globals/GeocacheFinderTracker"/>
+        <entry id="12" object="true" symbol="GeocacheFinderTracker"/>
+        <entry id="47" symbol="item_2"/>
+        <entry id="46" symbol="item_1"/>
+        <entry id="34" module="true" symbol="Menus"/>
+        <entry id="7" module="true" symbol="globals/Rez/Layouts"/>
+        <entry id="24" method="true" symbol="getPosition"/>
+        <entry id="8389122" method="true" symbol="onLayout"/>
+        <entry id="37" object="true" symbol="backdrop"/>
+        <entry id="30" method="true" symbol="haversineFormula"/>
+        <entry field="true" id="8389063" symbol="identifier"/>
+        <entry field="true" id="15" symbol="LOCATION_DEGREES"/>
+        <entry id="10" object="true" symbol="GeocacheFinderMenuDelegate"/>
+        <entry id="11" object="true" symbol="GeocacheFinderView"/>
+        <entry id="8" module="true" symbol="globals/Rez/JsonData"/>
+        <entry id="4" module="true" symbol="globals/Rez/Drawables"/>
+        <entry id="38" object="true" symbol="MainMenu"/>
+        <entry id="8388699" method="true" symbol="stop"/>
+        <entry id="8388644" module="true" symbol="System"/>
+        <entry id="8389315" symbol="longitude"/>
+        <entry id="8388769" module="true" object="true" symbol="Rez"/>
+        <entry id="8390088" module="true" object="true" symbol="JsonData"/>
+        <entry field="true" id="26" symbol="RADIUS"/>
+        <entry id="8389068" method="true" symbol="draw"/>
+        <entry field="true" id="36" symbol="LauncherIcon"/>
+        <entry id="8388610" symbol="statics"/>
+        <entry id="8389123" method="true" symbol="onShow"/>
+        <entry id="8389350" module="true" symbol="globals"/>
+        <entry field="true" id="31" symbol="tracker"/>
+        <entry id="8388770" module="true" object="true" symbol="Strings"/>
+        <entry field="true" id="28" symbol="myLocation"/>
+        <entry id="8388702" method="true" symbol="initialize"/>
+        <entry field="true" id="20" symbol="destinationData"/>
+        <entry id="8389279" method="true" symbol="onStart"/>
+        <entry id="8388641" module="true" symbol="Math"/>
+        <entry id="25" method="true" symbol="getDistance"/>
+        <entry id="8389280" method="true" symbol="getInitialView"/>
+        <entry id="8389281" method="true" symbol="onStop"/>
+        <entry id="8389109" method="true" symbol="onMenuItem"/>
+        <entry id="13" object="true" symbol="GeocacheFinderApp"/>
+        <entry id="33" module="true" symbol="Layouts"/>
+        <entry id="8389317" symbol="degrees"/>
+        <entry id="8388698" method="true" symbol="start"/>
+        <entry field="true" id="17" symbol="LOCATION_GEO_STRING"/>
+        <entry id="6" module="true" symbol="globals/Rez/Fonts"/>
+        <entry field="true" id="21" symbol="locationData"/>
+        <entry id="8389125" method="true" symbol="onHide"/>
+        <entry field="true" id="19" symbol="destinationLon"/>
+        <entry field="true" id="27" symbol="cacheLocation"/>
+        <entry id="8388635" module="true" symbol="Application"/>
+        <entry field="true" id="32" symbol="mPrompt"/>
+        <entry field="true" id="42" symbol="menu_label_2"/>
+        <entry field="true" id="41" symbol="menu_label_1"/>
+    </symbolTable>
+    <localVars>
+        <entry arg="true" endPc="268435554" name="item" stackId="1" startPc="268435479"/>
+        <entry arg="true" endPc="268435723" name="dc" stackId="1" startPc="268435651"/>
+        <entry arg="true" endPc="268435873" name="dc" stackId="1" startPc="268435728"/>
+        <entry arg="true" endPc="268436043" name="info" stackId="1" startPc="268436006"/>
+        <entry arg="true" endPc="268436173" name="data" stackId="1" startPc="268436070"/>
+        <entry arg="true" endPc="268436226" name="theta" stackId="1" startPc="268436173"/>
+        <entry endPc="268436443" name="tmpVal" stackId="3" startPc="268436230"/>
+        <entry endPc="268436443" name="distance" stackId="4" startPc="268436230"/>
+        <entry arg="true" endPc="268436444" name="locationTwo" stackId="2" startPc="268436226"/>
+        <entry arg="true" endPc="268436444" name="locationOne" stackId="1" startPc="268436226"/>
+        <entry arg="true" endPc="268436576" name="state" stackId="1" startPc="268436553"/>
+        <entry arg="true" endPc="268436599" name="state" stackId="1" startPc="268436576"/>
+        <entry arg="true" endPc="268436936" name="dc" stackId="1" startPc="268436815"/>
+        <entry endPc="268437212" name="rez_cmp_local_custom_drawable_backdrop" stackId="2" startPc="268436948"/>
+        <entry endPc="268437212" name="rez_cmp_local_text_distance_text" stackId="3" startPc="268436948"/>
+        <entry arg="true" endPc="268437213" name="dc" stackId="1" startPc="268436936"/>
+    </localVars>
+    <annotations/>
+    <dataEntryOffsetMappings>
+        <dataEntry offset="95" parentId="" symbolId="globals" type="module"/>
+        <dataEntry offset="182" parentId="globals" symbolId="GeocacheFinderTracker" type="class"/>
+        <dataEntry offset="404" parentId="globals" symbolId="GeocacheFinderView" type="class"/>
+        <dataEntry offset="515" parentId="globals" symbolId="GeocacheFinderDelegate" type="class"/>
+        <dataEntry offset="570" parentId="globals" symbolId="Rez" type="module"/>
+        <dataEntry offset="649" parentId="Rez" symbolId="Drawables" type="module"/>
+        <dataEntry offset="704" parentId="Drawables" symbolId="backdrop" type="class"/>
+        <dataEntry offset="759" parentId="Rez" symbolId="Menus" type="module"/>
+        <dataEntry offset="798" parentId="Menus" symbolId="MainMenu" type="class"/>
+        <dataEntry offset="845" parentId="Rez" symbolId="Fonts" type="module"/>
+        <dataEntry offset="876" parentId="Rez" symbolId="Layouts" type="module"/>
+        <dataEntry offset="915" parentId="Rez" symbolId="JsonData" type="module"/>
+        <dataEntry offset="946" parentId="Rez" symbolId="Strings" type="module"/>
+        <dataEntry offset="1025" parentId="globals" symbolId="GeocacheFinderMenuDelegate" type="class"/>
+        <dataEntry offset="1080" parentId="globals" symbolId="GeocacheFinderApp" type="class"/>
+    </dataEntryOffsetMappings>
+    <functions>
+        <functionEntry accessMode="public" name="initialize" parent="GeocacheFinderMenuDelegate">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onMenuItem" parent="GeocacheFinderMenuDelegate">
+            <param id="item"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="initialize" parent="GeocacheFinderView">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onLayout" parent="GeocacheFinderView">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onShow" parent="GeocacheFinderView">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onUpdate" parent="GeocacheFinderView">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onHide" parent="GeocacheFinderView">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="initialize" parent="GeocacheFinderTracker">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="start" parent="GeocacheFinderTracker">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="stop" parent="GeocacheFinderTracker">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onPosition" parent="GeocacheFinderTracker">
+            <param id="info"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="hasPosition" parent="GeocacheFinderTracker">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="getPosition" parent="GeocacheFinderTracker">
+            <param id="data"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="hav" parent="GeocacheFinderTracker">
+            <param id="theta"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="haversineFormula" parent="GeocacheFinderTracker">
+            <param id="locationOne"/>
+            <param id="locationTwo"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="getDistance" parent="GeocacheFinderTracker">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="initialize" parent="GeocacheFinderApp">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onStart" parent="GeocacheFinderApp">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onStop" parent="GeocacheFinderApp">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="getInitialView" parent="GeocacheFinderApp">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="initialize" parent="GeocacheFinderDelegate">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onMenu" parent="GeocacheFinderDelegate">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="initialize" parent="backdrop">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="draw" parent="backdrop">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="MainLayout" parent="Layouts">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="initialize" parent="MainMenu">
+            <documentation/>
+        </functionEntry>
+    </functions>
+</debugInfo>

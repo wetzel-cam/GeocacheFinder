@@ -1,0 +1,4 @@
+<layout id="MainLayout">
+	<drawable id="backdrop" />
+	<label id="distance_text" text="@Strings.prompt" x="left" y="center" />
+</layout>

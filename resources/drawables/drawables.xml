@@ -1,0 +1,5 @@
+<drawables>
+    <drawable-list id="backdrop">
+    	<shape type="rectangle" height="fill" width="fill" color="Graphics.COLOR_LT_GRAY" />
+    </drawable-list>
+</drawables>

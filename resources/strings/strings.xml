@@ -1,0 +1,11 @@
+<strings>
+    <string id="AppName">GeocacheFinder</string>
+
+    <string id="prompt">Waiting on GPS...</string>
+
+	<string id="top_text">Distance: </string>
+	<string id="bottom_text">Current Heading: </string>
+
+    <string id="menu_label_1">Item 1</string>
+    <string id="menu_label_2">Item 2</string>
+</strings>
