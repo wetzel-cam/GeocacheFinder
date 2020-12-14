@@ -2,4 +2,7 @@
     <drawable-list id="backdrop">
     	<shape type="rectangle" height="fill" width="fill" color="Graphics.COLOR_LT_GRAY" />
     </drawable-list>
+    <!-- <drawable-list id="direction_arrow">
+    	<shape type="circle" radius="5" color="Graphics.COLOR_WHITE" x="center" y="20%" />
+    </drawable-list> -->
 </drawables>

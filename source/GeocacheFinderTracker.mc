@@ -12,14 +12,17 @@ class GeocacheFinderTracker {
 	
 	// An approximate value for r in haversine formula
 	// Value in kilometers
-	static const RADIUS = 6367.5165;
-	
-	hidden var destinationLat;
-	hidden var destinationLon;
-	
+	static const RADIUS_EARTH = 6367.5165;
+
 	// Toybox.Position.Location objects
 	hidden var destinationData;
 	hidden var locationData;
+	
+	hidden var radiusOfScreen;
+	
+	hidden var distanceFromDestination;
+	
+	var mArrow;
 	
 	// test data
 	static var cacheLocation = new GPS.Location(
@@ -39,8 +42,10 @@ class GeocacheFinderTracker {
 	
 	function initialize() {
 		locationData = null;
+		distanceFromDestination = null;		
 		
 		destinationData = cacheLocation;
+		radiusOfScreen = 218 / 2;
 	}
 	
 	function start() {
@@ -49,6 +54,18 @@ class GeocacheFinderTracker {
 	
 	function stop() {
 		GPS.enableLocationEvents(GPS.LOCATION_DISABLE, method(:onPosition));
+	}
+	
+	// used so that the distance isn't calculated multiple times if getDistance
+	// is called more than once and for other update shit
+	function update(dc) {
+		if (hasPosition() & hasDestination()) {
+			distanceFromDestination = haversineFormula(locationData, destinationData);
+		}
+		
+		var coords = positionArrow(getHeading());
+		
+		dc.drawCircle(coords[0] + 109, coords[1] + 109, 10);
 	}
 	
 	// Testing location data from geocache
@@ -76,6 +93,19 @@ class GeocacheFinderTracker {
 		}
 	}
 	
+	function getHeading() {
+		var heading = GPS.getInfo().heading;
+		if (heading != null) {
+			return GPS.getInfo().heading;
+		} else {
+			return 0;
+		}
+	}
+	
+	function positionArrow(heading) {
+		return [radiusOfScreen * Math.cos(heading), radiusOfScreen * Math.sin(heading)];
+	}
+	
 	// hav(theta) = sin^2(theta/2) = 1 - cos(theta)
 	static function hav(theta) {
 		return Math.sin(theta/2) * Math.sin(theta/2);
@@ -92,15 +122,27 @@ class GeocacheFinderTracker {
 			* Math.cos(locationTwo.toRadians()[0]) * hav(locationTwo.toRadians()[1] - locationOne.toRadians()[1]);
 		// Have h = hav(theta):
 		// 2r*arcsin(sqrt(h)), where r = radius of a sphere (in this case, the earth)
-		var distance = 2 * RADIUS * Math.asin(Math.sqrt(tmpVal));
+		var distance = 2 * RADIUS_EARTH * Math.asin(Math.sqrt(tmpVal));
 		
 		// returns in kilometers
 		return distance;
 	}
 	
+	function checkNull(object, exception) {
+	
+	}
+	
+	function hasDestination() {
+		if (destinationData != null) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
 	function getDistance() {
-		if (hasPosition()) {
-			return haversineFormula(locationData, destinationData);
+		if (distanceFromDestination != null) {
+			return distanceFromDestination;
 		} else {
 			return "error";
 		}

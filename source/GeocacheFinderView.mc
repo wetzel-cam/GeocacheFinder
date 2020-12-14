@@ -9,6 +9,7 @@ class GeocacheFinderView extends WatchUi.View {
 	var value;
 	
 	var mLabel;
+	var mLabel2;
 	var mPrompt;
 	
     function initialize() {
@@ -20,7 +21,8 @@ class GeocacheFinderView extends WatchUi.View {
     // Load your resources here
     function onLayout(dc) {
         setLayout(Rez.Layouts.MainLayout(dc));
-        mLabel = View.findDrawableById("distance_text");		
+        mLabel = View.findDrawableById("distance_text");
+        mLabel2 = View.findDrawableById("direction");		
     }
 
     // Called when this View is brought to the foreground. Restore
@@ -33,13 +35,23 @@ class GeocacheFinderView extends WatchUi.View {
     function onUpdate(dc) {
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
+        tracker.update(dc);
+        
+        // TODO: work on direction_arrow drawing/logic (arrow that will 
+        // go around the outside of the screen)
+        // best way to draw arrow is map vertexs away from center of watch and then connect
+        // them and fill the shape in
+        // no support for rotating bitmaps/shapes
         
 		value = tracker.getDistance();
 		if (value instanceof Lang.String) {
 			mLabel.setText(mPrompt);
 		} else {
-			mLabel.setText(value.format("%.14f"));
+			mLabel.setText(value.format("%.3f") + "km");
+			mLabel2.setText(tracker.getHeading().toString());
 		}
+		
+		System.println(dc.getWidth());
     }
 
     // Called when this View is removed from the screen. Save the
