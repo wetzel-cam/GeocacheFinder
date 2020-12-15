@@ -1,4 +1,6 @@
 using Toybox.Position as GPS;
+using Toybox.Sensor;
+using Toybox.Timer;
 using Toybox.System;
 using Toybox.WatchUi;
 using Toybox.Math;
@@ -8,6 +10,13 @@ class GeocacheFinderTracker {
 		LOCATION_DEGREES,
 		LOCATION_RADIANS,
 		LOCATION_GEO_STRING
+	}
+	
+	enum {
+		QUAD_1 = 4,
+		QUAD_2 = 7,
+		QUAD_3 = 5,
+		QUAD_4 = 8
 	}
 	
 	// An approximate value for r in haversine formula
@@ -23,6 +32,9 @@ class GeocacheFinderTracker {
 	hidden var distanceFromDestination;
 	
 	var mArrow;
+	
+	var mag;
+	var timer;
 	
 	// test data
 	static var cacheLocation = new GPS.Location(
@@ -46,14 +58,17 @@ class GeocacheFinderTracker {
 		
 		destinationData = cacheLocation;
 		radiusOfScreen = 218 / 2;
+		timer = new Timer.Timer();
 	}
 	
 	function start() {
 		GPS.enableLocationEvents(GPS.LOCATION_CONTINUOUS, method(:onPosition));
+		timer.start(method(:timerCallback), 500, true);
 	}
 	
 	function stop() {
 		GPS.enableLocationEvents(GPS.LOCATION_DISABLE, method(:onPosition));
+		timer.stop();
 	}
 	
 	// used so that the distance isn't calculated multiple times if getDistance
@@ -65,7 +80,12 @@ class GeocacheFinderTracker {
 		
 		var coords = positionArrow(getHeading());
 		
-		dc.drawCircle(coords[0] + 109, coords[1] + 109, 10);
+		getCardinalDirection();
+		
+		dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_BLACK);
+		dc.fillCircle(coords[0] + 109, coords[1] + 109, 10);
+		
+		WatchUi.requestUpdate();
 	}
 	
 	// Testing location data from geocache
@@ -96,14 +116,52 @@ class GeocacheFinderTracker {
 	function getHeading() {
 		var heading = GPS.getInfo().heading;
 		if (heading != null) {
-			return GPS.getInfo().heading;
+			System.println("Heading: " + heading.toString());
+			return heading;
 		} else {
 			return 0;
 		}
 	}
 	
-	function positionArrow(heading) {
-		return [radiusOfScreen * Math.cos(heading), radiusOfScreen * Math.sin(heading)];
+	function getCardinalDirection() {		
+		if (mag != null) {
+			System.println("X: " + mag[0] + ", Y: " + mag[1] + ", Z: " + mag[2]);
+			return "X: " + mag[0] + ", Y: " + mag[1] + ",\nZ: " + mag[2];
+		} else {
+			return "Waiting on data";
+		}
+	}
+	
+	function timerCallback() {
+		var info = Sensor.getInfo();
+		
+		if (info has :mag && info.mag != null) {
+			mag = info.mag;
+		}
+	}
+	
+	function getQuadrantValue(value) {
+		switch (value) {
+			case QUAD_1:
+				return Math.PI / 2;
+			case QUAD_2:
+				return Math.PI;
+			case QUAD_3:
+				return Math.PI * 3 / 2;
+			case QUAD_4:
+				return Math.PI * 2;
+			default:
+				return 0;
+		}
+	}
+	
+	function getQuadrant() {
+	}
+	
+	function positionArrow(heading) {	
+		// Cardinal Y direction is opposite the screen coordinates
+		// Shifted the heading by Pi, sensor reports north at 0 rads
+		return [radiusOfScreen * Math.cos(heading + (Math.PI / 2)), (radiusOfScreen * Math.sin(heading + (Math.PI / 2))) * -1];
 	}
 	
 	// hav(theta) = sin^2(theta/2) = 1 - cos(theta)

@@ -48,10 +48,11 @@ class GeocacheFinderView extends WatchUi.View {
 			mLabel.setText(mPrompt);
 		} else {
 			mLabel.setText(value.format("%.3f") + "km");
-			mLabel2.setText(tracker.getHeading().toString());
 		}
 		
-		System.println(dc.getWidth());
+		mLabel2.setText(tracker.getCardinalDirection());
+		
+//		System.println(dc.getWidth());
     }
 
     // Called when this View is removed from the screen. Save the
