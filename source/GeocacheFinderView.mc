@@ -2,6 +2,7 @@ using Toybox.WatchUi;
 using Toybox.System;
 
 using Toybox.WatchUi as Ui;
+using Toybox.Sensor;
 
 class GeocacheFinderView extends WatchUi.View {
 	
@@ -41,16 +42,13 @@ class GeocacheFinderView extends WatchUi.View {
         // go around the outside of the screen)
         // best way to draw arrow is map vertexs away from center of watch and then connect
         // them and fill the shape in
-        // no support for rotating bitmaps/shapes
-        
-		value = tracker.getDistance();
-		if (value instanceof Lang.String) {
-			mLabel.setText(mPrompt);
+        // no support for rotating bitmaps/shapes		
+		var value32 = Sensor.getInfo().heading;
+		if (value32 != null) {
+			mLabel2.setText(value32.toString());
 		} else {
-			mLabel.setText(value.format("%.3f") + "km");
+			mLabel2.setText("Wait you cunt");
 		}
-		
-		mLabel2.setText(tracker.getCardinalDirection());
 		
 //		System.println(dc.getWidth());
     }

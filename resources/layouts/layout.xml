@@ -1,6 +1,6 @@
 <layout id="MainLayout">
 	<drawable id="backdrop" />
 	<!-- <drawable id="direction_arrow" /> -->
-	<label id="distance_text" text="@Strings.prompt" x="30%" y="40%" />
-	<label id="direction" text="Direction" x="30" y="50%" />
+<!-- 	<label id="distance_text" text="@Strings.prompt" x="30%" y="40%" /> -->
+	<label id="direction" text="Direction" x="25%" y="center" />
 </layout>
