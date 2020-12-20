@@ -3,6 +3,7 @@ using Toybox.System;
 
 using Toybox.WatchUi as Ui;
 using Toybox.Sensor;
+using Toybox.Timer;
 
 class GeocacheFinderView extends WatchUi.View {
 	
@@ -13,6 +14,8 @@ class GeocacheFinderView extends WatchUi.View {
 	var mLabel2;
 	var mPrompt;
 	
+	var timer;
+
     function initialize() {
         View.initialize();
         tracker = Application.getApp().tracker;
@@ -23,7 +26,9 @@ class GeocacheFinderView extends WatchUi.View {
     function onLayout(dc) {
         setLayout(Rez.Layouts.MainLayout(dc));
         mLabel = View.findDrawableById("distance_text");
-        mLabel2 = View.findDrawableById("direction");		
+        mLabel2 = View.findDrawableById("direction");
+        timer = new Timer.Timer();
+        timer.start(method(:timerCallback), 1000, true);	
     }
 
     // Called when this View is brought to the foreground. Restore
@@ -36,21 +41,16 @@ class GeocacheFinderView extends WatchUi.View {
     function onUpdate(dc) {
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
-        tracker.update(dc);
         
-        // TODO: work on direction_arrow drawing/logic (arrow that will 
-        // go around the outside of the screen)
-        // best way to draw arrow is map vertexs away from center of watch and then connect
-        // them and fill the shape in
-        // no support for rotating bitmaps/shapes		
-		var value32 = Sensor.getInfo().heading;
-		if (value32 != null) {
-			mLabel2.setText(value32.toString());
-		} else {
-			mLabel2.setText("Wait you cunt");
-		}
+        System.println(tracker.getAngle());
+        System.println(tracker.getQuadrant());
+        var value = tracker.orientPoint();
 		
-//		System.println(dc.getWidth());
+		System.println("In update: " + value.toString());
+        if (value != null) {
+        	dc.setColor(Graphics.COLOR_BLUE, Graphics.COLOR_BLACK);
+        	dc.fillCircle(value[0], value[1], 5);
+        }
     }
 
     // Called when this View is removed from the screen. Save the
@@ -58,5 +58,8 @@ class GeocacheFinderView extends WatchUi.View {
     // memory.
     function onHide() {
     }
-
+	
+	function timerCallback() {
+		WatchUi.requestUpdate();
+	}
 }
