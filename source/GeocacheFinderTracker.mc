@@ -18,25 +18,34 @@ class GeocacheFinderTracker {
 			:format => :degrees
 		}
 	);
-//	39.206843, -76.690856
+//	39.205249, -76.693789
 	static var currentLocation = new GPS.Location(
 		{
-			:latitude => 39.206843d,
-			:longitude => -76.690856d,
+			:latitude => 39.205249d,
+			:longitude => -76.693789d,
 			:format => :degrees
 		}
 	);
-//	39.206823, -76.692099
-	static var thirdLocation = new GPS.Location(
+//	39.222103, -76.709498
+	static var nwLocation = new GPS.Location(
 		{
-			:latitude => 39.206823d,
-			:longitude => -76.692099d,
+			:latitude => 39.222103d,
+			:longitude => -76.709498d,
+			:format => :degrees
+		}
+	);
+
+// 	39.203192, -76.686766
+	static var seLocation = new GPS.Location(
+		{
+			:latitude => 39.203192d,
+			:longitude => -76.686766d,
 			:format => :degrees
 		}
 	);
 	
 //	39.2094511,-76.6859241
-	static var fourthLocation = new GPS.Location(
+	static var neLocation = new GPS.Location(
 		{
 			:latitude => 39.2094511d,
 			:longitude => -76.6859241d,
@@ -75,20 +84,31 @@ class GeocacheFinderTracker {
 	function getAngle() {
 		// Find the slope between the points
 		// NOTE: testing values, change to variables later
-		var run = fourthLocation.toRadians()[0] - currentLocation.toRadians()[0];
-		var rise = fourthLocation.toRadians()[1] - currentLocation.toRadians()[1];
+		var rise = cacheLocation.toRadians()[0] - currentLocation.toRadians()[0];
+		var run = cacheLocation.toRadians()[1] - currentLocation.toRadians()[1];
 		
+		System.println("Rise: " + rise.format("%.12f") + ", Run: " + run.format("%.12f"));
 		// Using sohcahtoa, find the angle of the right triangle drawn by the slope
-		return Math.atan(rise/run);
+		var angle = Math.atan2(rise,run);
+		
+		System.println("Angle of vector: " + angle);
+		
+		return angle;
 	}
 	
 	// Returns the signs of the slopes
 	function getSlopeSigns() {
 		var signs = new [2];
 		
-		var run = fourthLocation.toRadians()[0] - currentLocation.toRadians()[0];
-		var rise = fourthLocation.toRadians()[1] - currentLocation.toRadians()[1];
+		System.println("toLocation radians: " + cacheLocation.toRadians());
+		System.println("currentLocation radians: " + currentLocation.toRadians());
+		
+		var rise = cacheLocation.toRadians()[0] - currentLocation.toRadians()[0];
+		var run = cacheLocation.toRadians()[1] - currentLocation.toRadians()[1];
+		
 		var values = [rise, run];
+		
+		System.println("second rise/run: " + values.toString());
 		
 		for (var i = 0; i < 2; i++) {
 			if (values[i] > 0) {
@@ -102,6 +122,7 @@ class GeocacheFinderTracker {
 		
 		if (debug) {
 			System.println("Rise sign: " + signs[0].toString() + ", Run sign: " + signs[1].toString());
+			System.println("slopeSigns: " + values.toString());
 		}
 		
 		return signs;
@@ -122,32 +143,58 @@ class GeocacheFinderTracker {
 		}
 	}
 	
-	function orientPoint() {
+	function getQuadrantOffset(quadrant) {
+		switch (quadrant) {
+			case 1:
+				return 0;
+			case 2:
+				return 0;
+			case 3:
+				return 0;
+			case 4:
+				return 0;
+			default:
+				return 0;
+		}
+	}
+	
+	function rotatePoint() {
 		var center = [109, 109];
 		var newCoords = null;
 		var angle = getAngle();
+		var quadrant = getQuadrant();
+		System.println("Quadrant: " + quadrant);
 		// this value needs to change based on the quadrant(?) of the vector
-		var rotationAngle = - Math.PI / 2;
+		var rotationAngle = getQuadrantOffset(quadrant);
 		
 		var sin = Math.sin(rotationAngle);
 		var cos = Math.cos(rotationAngle);
-		var coords = drawPoint(109, getAngle());
+		var coords = drawPoint(109, angle);
 		
-		System.println(coords.toString());
+		System.println("Before rotation: " + coords.toString());
 		
 		var x = (coords[0] * cos) - (coords[1] * sin);
 		var y = (coords[0] * sin) + (coords[1] * cos);
 			
-		newCoords = [center[0] + x, (center[1] + y)];
+		newCoords = [x, y];
 		
-		System.println(newCoords.toString());
+		System.println("After rotation: " + newCoords.toString());
 		
 		return newCoords;
 	}
 	
 	function drawPoint(radius, angle) {	
-		return [radius * Math.cos(angle), (radius * Math.sin(angle))];
+		return [radius * Math.cos(angle), radius * Math.sin(angle)];
 
+	}
+	
+	function shiftCoords(coords) {
+		var newValues = new [2];
+		
+		newValues[0] = coords[0] + 109;
+		newValues[1] = coords[1] + 109;
+		
+		return newValues;
 	}
 	
 	function sohcahtoa(angle, h) {

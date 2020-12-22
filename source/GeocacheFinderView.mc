@@ -28,7 +28,7 @@ class GeocacheFinderView extends WatchUi.View {
         mLabel = View.findDrawableById("distance_text");
         mLabel2 = View.findDrawableById("direction");
         timer = new Timer.Timer();
-        timer.start(method(:timerCallback), 1000, true);	
+        timer.start(method(:timerCallback), 5000, true);	
     }
 
     // Called when this View is brought to the foreground. Restore
@@ -42,11 +42,15 @@ class GeocacheFinderView extends WatchUi.View {
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
         
-        System.println(tracker.getAngle());
-        System.println(tracker.getQuadrant());
-        var value = tracker.orientPoint();
+        var value = tracker.rotatePoint();
+        value = tracker.shiftCoords(value);
+        
+        System.println("Shifted value: " + value.toString());
+        
+        //center point
+        dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_BLACK);
+        dc.fillCircle(dc.getWidth()/2,dc.getHeight()/2,5);
 		
-		System.println("In update: " + value.toString());
         if (value != null) {
         	dc.setColor(Graphics.COLOR_BLUE, Graphics.COLOR_BLACK);
         	dc.fillCircle(value[0], value[1], 5);
