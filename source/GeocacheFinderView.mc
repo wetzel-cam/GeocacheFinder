@@ -41,11 +41,10 @@ class GeocacheFinderView extends WatchUi.View {
     function onUpdate(dc) {
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
+        tracker.update();
         
         var value = tracker.rotatePoint();
         value = tracker.shiftCoords(value);
-        
-        System.println("Shifted value: " + value.toString());
         
         //center point
         dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_BLACK);
@@ -64,6 +63,7 @@ class GeocacheFinderView extends WatchUi.View {
     }
 	
 	function timerCallback() {
+		tracker.update();
 		WatchUi.requestUpdate();
 	}
 }
