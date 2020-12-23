@@ -33,11 +33,11 @@ class GeocacheFinderTracker {
 			:format => :degrees
 		}
 	);
-//	39.222103, -76.709498
+//	39.208281, -76.696945
 	static var nwLocation = new GPS.Location(
 		{
-			:latitude => 39.222103d,
-			:longitude => -76.709498d,
+			:latitude => 39.208281d,
+			:longitude => -76.696945d,
 			:format => :degrees
 		}
 	);
@@ -67,7 +67,7 @@ class GeocacheFinderTracker {
 	var slopeSigns;
 	var quadrant;
 	
-	var debug = true;
+	var debug = false;
 	var test1;
 	
 	function initialize() {
@@ -79,7 +79,11 @@ class GeocacheFinderTracker {
 		
 		if (debug) {
 			currentLocation = cLocation;
-			destination = nwLocation;
+			destination = neLocation;
+		}
+		
+		if (!debug) {
+			destination = swLocation;
 		}
 	}
 	
@@ -94,9 +98,11 @@ class GeocacheFinderTracker {
 	}
 	
 	function update() {
-		updateSlopeSigns();
-		updateQuadrant();
-		updateAngle();
+		if (currentLocation != null) {
+			updateSlopeSigns();
+			updateQuadrant();
+			updateAngle();
+		}
 		
 		if (debug) {
 			
@@ -123,8 +129,10 @@ class GeocacheFinderTracker {
 			// X value is the opposite side, Y values is the adjacent side
 			case GeocacheFinderTracker.QUADRANT_TWO:
 			case GeocacheFinderTracker.QUADRANT_FOUR:
-				opposite = destination.toRadians()[1] - currentLocation.toRadians()[1];
-				adjacent = destination.toRadians()[0] - currentLocation.toRadians()[0];
+//				opposite = destination.toRadians()[1] - currentLocation.toRadians()[1];
+//				adjacent = destination.toRadians()[0] - currentLocation.toRadians()[0];
+				opposite = destination.toRadians()[0] - currentLocation.toRadians()[0];
+				adjacent = destination.toRadians()[1] - currentLocation.toRadians()[1];
 				break;
 		}
 		
@@ -182,13 +190,11 @@ class GeocacheFinderTracker {
 	function getQuadrantOffset() {
 		switch (quadrant) {
 			case GeocacheFinderTracker.QUADRANT_ONE:
+			case GeocacheFinderTracker.QUADRANT_FOUR:
 				return 0;
 			case GeocacheFinderTracker.QUADRANT_TWO:
-				return Math.PI /2;
 			case GeocacheFinderTracker.QUADRANT_THREE:
 				return Math.PI;
-			case GeocacheFinderTracker.QUADRANT_FOUR:
-				return -1 * Math.PI / 2;
 			default:
 				break;
 		}
@@ -202,12 +208,8 @@ class GeocacheFinderTracker {
 		var cos = Math.cos(rotationAngle);
 		var drawCoords = drawPoint(109, angle);
 		
-		System.println("Before rotation: " + drawCoords.toString());
-		
 		newCoords[0] = (drawCoords[0] * cos) - (drawCoords[1] * sin);
 		newCoords[1] = (drawCoords[0] * sin) + (drawCoords[1] * cos);
-		
-		System.println("After rotation: " + newCoords.toString());
 		
 		return newCoords;
 	}
@@ -220,9 +222,12 @@ class GeocacheFinderTracker {
 	function shiftCoords(coords) {
 		var newValues = new [2];
 		
+		System.println("values: " + coords.toString());
+		
 		newValues[0] = coords[0] + 109;
 		newValues[1] = 109 - coords[1];
 		
+		System.println("coords " + newValues.toString());
 		return newValues;
 	}
 	

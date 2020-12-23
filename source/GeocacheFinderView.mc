@@ -28,7 +28,7 @@ class GeocacheFinderView extends WatchUi.View {
         mLabel = View.findDrawableById("distance_text");
         mLabel2 = View.findDrawableById("direction");
         timer = new Timer.Timer();
-        timer.start(method(:timerCallback), 5000, true);	
+        timer.start(method(:timerCallback), 1000, true);	
     }
 
     // Called when this View is brought to the foreground. Restore
@@ -43,17 +43,16 @@ class GeocacheFinderView extends WatchUi.View {
         View.onUpdate(dc);
         tracker.update();
         
-        var value = tracker.rotatePoint();
-        value = tracker.shiftCoords(value);
+        if (tracker.currentLocation != null) {
+        	var value = tracker.rotatePoint();
+        	value = tracker.shiftCoords(value);
+        	dc.setColor(Graphics.COLOR_BLUE, Graphics.COLOR_BLACK);
+        	dc.fillCircle(value[0], value[1], 5);
+        }
         
         //center point
         dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_BLACK);
         dc.fillCircle(dc.getWidth()/2,dc.getHeight()/2,5);
-		
-        if (value != null) {
-        	dc.setColor(Graphics.COLOR_BLUE, Graphics.COLOR_BLACK);
-        	dc.fillCircle(value[0], value[1], 5);
-        }
     }
 
     // Called when this View is removed from the screen. Save the
